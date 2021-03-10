@@ -1,6 +1,240 @@
-body{
-	background-color: black;
-	color: #666666;
-	font-family: Montserrat;
-	font-size: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Orbitron&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family:'Orbitron', sans-serif;
 }
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: #040615;
+}
+
+h2{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+	display: inline-block;
+	color: #B7094C;
+	text-shadow: 0.5px 1px #fff;
+	height: 90px;
+	font-size: 2rem;
+}
+
+
+/*Analog Clock design*/
+
+	.clock{
+		width: 350px;
+		height: 350px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 8px solid #fff;
+		border-radius: 50%; 
+	}
+
+	.clock::before{
+		content: '';
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		background-color: #B7094C;
+		border-radius: 50%;
+		z-index: 10000;
+	}
+
+	.hour, .min, .sec{
+		position: absolute;
+	}
+
+	.hour, .hr{
+		width: 200px;
+		height: 200px;
+	}
+
+	.min, .mn{
+		width: 230px;
+		height: 230px;
+	}
+
+	.sec, .sc{
+		width: 250px;
+		height: 250px;
+	}
+
+	.hr, .mn, .sc{
+		display: flex;
+		justify-content: center;
+		position: absolute;
+	}
+
+	.hr::before{
+		content: '';
+		position: absolute;
+		width: 8px;
+		height: 100px;
+		background: #fff;
+	}
+
+	.mn::before{
+		content: '';
+		position: absolute;
+		width: 4px;
+		height: 110px;
+		background: #fff;;
+	}
+
+	.sc::before{
+		content: '';
+		position: absolute;
+		width: 2px;
+		height: 120px;
+		background: #B7094C;
+	}
+
+/*Digital Clock design*/
+
+	#digitalClock{
+		display: flex;
+		justify-content: center;
+		color: #fff;
+		font-size: 4rem;
+		margin-top: 45px;
+		border: 1px solid #B7094C;
+		padding: 3px;
+	}
+
+	#digitalClock:hover{
+		background-color: #B7094C; 
+	}
+
+/*Responsive maken*/
+
+	@media only screen and (max-width: 960px) {
+		.clock{
+			width: 300px;
+			height: 300px;
+		}
+
+		.hour, .hr{
+			width: 150px;
+			height: 150px;
+		}
+
+		.min, .mn{
+			width: 180px;
+			height: 180px;
+		}
+
+		.sec, .sc{
+			width: 200px;
+			height: 200px;
+		}
+
+		.hr::before{
+			height: 80px;
+		}
+
+		.mn::before{
+			height: 90px;
+		}
+
+		.sc::before{
+			height: 100px;
+		}
+
+		#digitalClock{
+			font-size: 3.7rem;
+		}
+
+	}
+
+	@media only screen and (max-width: 670px) {
+		.clock{
+			width: 275px;
+			height: 275px;
+		}
+
+		.hour, .hr{
+			width: 125px;
+			height: 125px;
+		}
+
+		.min, .mn{
+			width: 165px;
+			height: 165px;
+		}
+
+		.sec, .sc{
+			width: 175px;
+			height: 175px;
+		}
+
+		.hr::before{
+			height: 60px;
+		}
+
+		.mn::before{
+			height: 85px;
+		}
+
+		.sc::before{
+			height: 80px;
+		}
+
+		#digitalClock{
+			font-size: 3.3rem;
+		}
+	}
+
+	@media only screen and (max-width: 500px) {
+		.clock{
+			width: 250px;
+			height: 250px;
+		}
+
+		.hour, .hr{
+			width: 110px;
+			height: 110px;
+		}
+
+		.min, .mn{
+			width: 140px;
+			height: 140px;
+		}
+
+		.sec, .sc{
+			width: 120px;
+			height: 120px;
+		}
+
+		.hr::before{
+			height: 55px;
+		}
+
+		.mn::before{
+			height: 75px;
+		}
+
+		.sc::before{
+			height: 65px;
+		}
+
+		#digitalClock{
+			font-size: 2.8rem;
+		}
+	}
+
+	@media only screen and (max-width: 375px) {
+		#digitalClock{
+			font-size: 2rem;
+		}
+	}

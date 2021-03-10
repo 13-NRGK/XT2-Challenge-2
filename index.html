@@ -1,12 +1,78 @@
 <!DOCTYPE html>
+<html lang="en">
+
 	<head>
-		<meta charset="UTF-8" />
-		<title>Challenge 2</title>
-		<link type="text/css" href="styles/style.css" rel="stylesheet" />
-		<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="scripts/my_scripts.js"></script>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>SpaceX Clock</title>
+	    <link rel="stylesheet" href="styles/style.css">
+	    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 	</head>
+
 	<body>
-		
+		<div class="header">
+			<h2><span class="las la-rocket"></span> <span>Space X</span></h2>
+		</div>
+		<div class="clock">
+			<div class="hour">
+				<div class="hr" id="hr"></div>
+			</div>
+			<div class="min">
+				<div class="mn" id="mn"></div>
+			</div>
+			<div class="sec">
+				<div class="sc" id="sc"></div>
+			</div>
+		</div>
+
+		<div id="digitalClock">
+			<div id="hour"></div>
+			<div id="minutes"></div>
+			<div id="seconds"></div>
+			<div id="ampm"></div>
+		</div>
+
+		<script>
+
+			const hr = document.querySelector("#hr");
+			const mn = document.querySelector("#mn");
+			const sc = document.querySelector("#sc");
+
+			setInterval(()=>{
+				let day = new Date();
+				let hh = day.getHours() * 30;
+				let mm = day.getMinutes() * 6;
+				let ss = day.getSeconds() * 6;
+
+				hr.style.transform = `rotateZ(${hh+(mm/24)}deg)`;
+				mn.style.transform = `rotateZ(${mm}deg)`;
+				sc.style.transform = `rotateZ(${ss}deg)`;
+
+				let hour = document.querySelector("#hour");
+				let minutes = document.querySelector("#minutes");
+				let seconds = document.querySelector("#seconds");
+				let ampm = document.querySelector("#ampm");
+
+				let h = new Date().getHours();
+				let m = new Date().getMinutes();
+				let s = new Date().getSeconds();
+				let am = "PM";
+
+				// verandering van AM to PM //
+				if (h < 12) {
+					let am = "AM"
+				}
+
+				// voeg nul toe voor getallen van één cijfer //
+				h = (h < 10) ? "0" + h : h
+				m = (m < 10) ? "0" + m : m
+				s = (s < 10) ? "0" + s : s
+
+				hour.innerHTML = h+" : ";
+				minutes.innerHTML = m+" : ";
+				seconds.innerHTML = s+" &nbsp ";
+				ampm.innerHTML = am;
+			})
+		</script>
 	</body>
 </html>
