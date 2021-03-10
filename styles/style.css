@@ -24,7 +24,7 @@ h2{
 	display: inline-block;
 	color: #B7094C;
 	text-shadow: 0.5px 1px #fff;
-	height: 90px;
+	height: 100px;
 	font-size: 2rem;
 }
 
@@ -108,8 +108,9 @@ h2{
 		color: #fff;
 		font-size: 4rem;
 		margin-top: 45px;
-		border: 1px solid #B7094C;
+		border: 3px solid #B7094C;
 		padding: 3px;
+		background-color: #040615;
 	}
 
 	#digitalClock:hover{
