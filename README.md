@@ -1,2 +1,4 @@
 # XT2-Challenge-2
- Dashboard
+ 
+ ~Hallo,
+ Bij dit challange moeten we een clock coderen en ook met de tijd aangeven of het s'morgens is of 's nachts. 
