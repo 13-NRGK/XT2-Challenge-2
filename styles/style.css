@@ -14,6 +14,7 @@ body{
 	flex-direction: column;
 	min-height: 100vh;
 	background-color: #040615;
+	width: 100%;
 }
 
 h2{
@@ -24,81 +25,10 @@ h2{
 	display: inline-block;
 	color: #B7094C;
 	text-shadow: 0.5px 1px #fff;
-	height: 100px;
+	height: 70px;
 	font-size: 2rem;
 }
 
-
-/*Analog Clock design*/
-
-	.clock{
-		width: 350px;
-		height: 350px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border: 8px solid #fff;
-		border-radius: 50%; 
-	}
-
-	.clock::before{
-		content: '';
-		position: absolute;
-		width: 15px;
-		height: 15px;
-		background-color: #B7094C;
-		border-radius: 50%;
-		z-index: 10000;
-	}
-
-	.hour, .min, .sec{
-		position: absolute;
-	}
-
-	.hour, .hr{
-		width: 200px;
-		height: 200px;
-	}
-
-	.min, .mn{
-		width: 230px;
-		height: 230px;
-	}
-
-	.sec, .sc{
-		width: 250px;
-		height: 250px;
-	}
-
-	.hr, .mn, .sc{
-		display: flex;
-		justify-content: center;
-		position: absolute;
-	}
-
-	.hr::before{
-		content: '';
-		position: absolute;
-		width: 8px;
-		height: 100px;
-		background: #fff;
-	}
-
-	.mn::before{
-		content: '';
-		position: absolute;
-		width: 4px;
-		height: 110px;
-		background: #fff;;
-	}
-
-	.sc::before{
-		content: '';
-		position: absolute;
-		width: 2px;
-		height: 120px;
-		background: #B7094C;
-	}
 
 /*Digital Clock design*/
 
@@ -109,7 +39,7 @@ h2{
 		font-size: 4rem;
 		margin-top: 45px;
 		border: 3px solid #B7094C;
-		padding: 3px;
+		padding: 3px 7px;
 		background-color: #040615;
 	}
 
