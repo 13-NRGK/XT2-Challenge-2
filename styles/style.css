@@ -13,9 +13,100 @@ body{
 	align-items: center;
 	flex-direction: column;
 	min-height: 100vh;
-	background-color: #040615;
 	width: 100%;
 }
+
+/*Sunny Sky Css*/
+
+
+/*Starry Night Sky Css*/
+
+	.sceneDayNight{
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		/*background: linear-gradient(#111425,#3751e0);*/
+		background: linear-gradient(#111425,#3751e0);
+		background-attachment: fixed;
+		overflow: hidden;
+	}
+
+	.sceneDayMidday{
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		background: linear-gradient(blue,green);
+		background-attachment: fixed;
+		overflow: hidden;
+
+	}
+
+	.sceneDaylight{
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		background: linear-gradient(orange,yellow);
+		background-attachment: fixed;
+		overflow: hidden;
+
+	}
+
+	.moon{
+		position: absolute;
+		top: 100px;
+		left: 400px;
+		width: 100px;
+		height: 100px;
+		background-color: #fff;
+		border-radius: 50%;
+		z-index: 1000;
+	}
+
+	.moon:after{
+		content: '';
+		position: absolute;
+		top: -15px;
+		left: 15px;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background: linear-gradient(#111425,#3751e0);
+		background-attachment: fixed;
+	}
+
+	.forest{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		transform: scale(1.2);
+	}
+
+	.scene i{
+		position: absolute;
+		width: 100%;
+		background-color: #fff;
+		border-radius: 50%;
+		animation: animate linear infinite;
+	}
+
+	@keyframes animate{
+		0%{
+			opacity: 0;
+			transform: translateY(0);
+		}
+
+		10%, 90%{
+			opacity: 1;
+		}
+
+		100%{
+			opacity: 0;
+			transform: translateY(-100px);
+		}
+	}
+
 
 h2{
 	display: flex;
@@ -37,128 +128,37 @@ h2{
 		justify-content: center;
 		color: #fff;
 		font-size: 4rem;
-		margin-top: 45px;
-		border: 3px solid #B7094C;
-		padding: 3px 7px;
-		background-color: #040615;
-	}
-
-	#digitalClock:hover{
-		background-color: #B7094C; 
+		margin-top: 300px;
+		text-shadow: 6px 0px #a01a58;
 	}
 
 /*Responsive maken*/
 
 	@media only screen and (max-width: 960px) {
-		.clock{
-			width: 300px;
-			height: 300px;
-		}
-
-		.hour, .hr{
-			width: 150px;
-			height: 150px;
-		}
-
-		.min, .mn{
-			width: 180px;
-			height: 180px;
-		}
-
-		.sec, .sc{
-			width: 200px;
-			height: 200px;
-		}
-
-		.hr::before{
-			height: 80px;
-		}
-
-		.mn::before{
-			height: 90px;
-		}
-
-		.sc::before{
-			height: 100px;
-		}
-
 		#digitalClock{
-			font-size: 3.7rem;
+			font-size: 3.3rem;
+			margin-top: 250px;
 		}
 
+		.moon{
+			left: 200px;
+		}
+
+		
 	}
 
 	@media only screen and (max-width: 670px) {
-		.clock{
-			width: 275px;
-			height: 275px;
-		}
-
-		.hour, .hr{
-			width: 125px;
-			height: 125px;
-		}
-
-		.min, .mn{
-			width: 165px;
-			height: 165px;
-		}
-
-		.sec, .sc{
-			width: 175px;
-			height: 175px;
-		}
-
-		.hr::before{
-			height: 60px;
-		}
-
-		.mn::before{
-			height: 85px;
-		}
-
-		.sc::before{
-			height: 80px;
-		}
-
 		#digitalClock{
-			font-size: 3.3rem;
+			font-size: 3rem;
+			margin-top: 300px;
+		}
+
+		.moon{
+			left: 115px;
 		}
 	}
 
 	@media only screen and (max-width: 500px) {
-		.clock{
-			width: 250px;
-			height: 250px;
-		}
-
-		.hour, .hr{
-			width: 110px;
-			height: 110px;
-		}
-
-		.min, .mn{
-			width: 140px;
-			height: 140px;
-		}
-
-		.sec, .sc{
-			width: 120px;
-			height: 120px;
-		}
-
-		.hr::before{
-			height: 55px;
-		}
-
-		.mn::before{
-			height: 75px;
-		}
-
-		.sc::before{
-			height: 65px;
-		}
-
 		#digitalClock{
 			font-size: 2.8rem;
 		}

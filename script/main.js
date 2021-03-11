@@ -1,33 +1,100 @@
+function stars(){
+		let count = 500;
+		let scene = document.querySelector('.scene');
+		let i = 0;
+		while(i < count){
+			let star = document.createElement("i");
+			let x = Math.floor(Math.random() * window.innerWidth);
+			let y = Math.floor(Math.random() * window.innerHeight);
+			let duration = Math.random() * 10;
+			let size = Math.random() * 2;
 
-'user strict';
+			star.style.left = x+'px';
+			star.style.top = y+ 'px';
+			star.style.width = 1+size+ 'px';
+			star.style.height = 1+size+ 'px';
 
-const hr = document.querySelector("#hr");
-const mn = document.querySelector("#mn");
-const sc = document.querySelector("#sc");
+			star.style.animationDuration = 5+duration+'s';
+			 star.style.animationDelay = duration+'s';
 
-setInterval(()=>{
-	let day = new Date();
-	let hh = day.getHours() * 30;
-	let mm = day.getMinutes() * 6;
-	let ss = day.getSeconds() * 6;
+			scene.appendChild(star);
+			i++
+		}
+	}
+	stars();
 
-	hr.style.transform = 'rotateZ(${hh+(mm/12)}deg)';
-	mn.style.transform = 'rotateZ(${mm}deg)';
-	sc.style.transform = 'rotateZ(${ss}deg)';
+	const hr = document.querySelector("#hr");
+			const mn = document.querySelector("#mn");
+			const sc = document.querySelector("#sc");
 
-	let hour = document.querySelector("#hour");
-	let minutes = document.querySelector("#minutes");
-	let seconds = document.querySelector("#seconds");
-	let ampm = document.querySelector("#ampm");
+			setInterval(()=>{
+				let day = new Date();
+				let hh = day.getHours() * 30;
+				let mm = day.getMinutes() * 6;
+				let ss = day.getSeconds() * 6;
 
-	let h = new Date().getHours();
-	let m = new Date().getMinutes();
-	let s = new Date().getSeconds();
-	let ampm = "AM";
+				hr.style.transform = `rotateZ(${hh+(mm/24)}deg)`;
+				mn.style.transform = `rotateZ(${mm}deg)`;
+				sc.style.transform = `rotateZ(${ss}deg)`;
 
-	hour.innerHTML = h+":";
-	minutes.innerHTML = m+":";
-	seconds.innerHTML = s+"&nbsp";
-	ampm.innerHTML = am;
-})
+				let hour = document.querySelector("#hour");
+				let minutes = document.querySelector("#minutes");
+				let seconds = document.querySelector("#seconds");
+				let ampm = document.querySelector("#ampm");
 
+				let h = new Date().getHours();
+				let m = new Date().getMinutes();
+				let s = new Date().getSeconds();
+				var am = "AM";
+
+				var backgroundDay = document.getElementById('backgroundDay');
+				var moon = document.getElementById('moon');
+				// switch(true){
+				// 	case h >= 6 && h <= 11:
+				// 		backgroundDay.classList.add('sceneDaylight');
+					
+				// 	case h >= 12 && h <= 17:
+				// 		backgroundDay.classList.add('sceneDayMidday');
+
+				// 	case h >= 18 && h <= 5:
+				// 		backgroundDay.classList.add('sceneDayNight');
+
+				// }
+
+				switch(true){
+					case s >= 0 && s <= 14: //NOG FF AANPASSSEN NAAR UREN
+						backgroundDay.classList.remove('sceneDayNight');
+						moon.classList.remove('moon');
+						backgroundDay.classList.add('sceneDaylight');
+						break;
+					
+					case s >= 16 && s <= 29: //NOG FF AANPASSSEN NAAR UREN
+						backgroundDay.classList.remove('sceneDaylight');
+						moon.classList.remove('moon');
+						backgroundDay.classList.add('sceneDayMidday');
+						break;
+
+					case s >= 31 && s <= 58: //NOG FF AANPASSSEN NAAR UREN
+						backgroundDay.classList.remove('sceneDayMidday');
+						moon.classList.add('moon');
+						backgroundDay.classList.add('sceneDayNight');
+						break;
+
+				}
+
+
+				// verandering van AM to PM 
+				if (h > 12) {
+					var am = "PM"
+				}
+
+				// voeg nul toe voor getallen van één cijfer 
+				h = (h < 10) ? "0" + h : h
+				m = (m < 10) ? "0" + m : m
+				s = (s < 10) ? "0" + s : s
+
+				hour.innerHTML = h+ " : ";
+				minutes.innerHTML = m+ " : ";
+				seconds.innerHTML = s+ " &nbsp ";
+				ampm.innerHTML = am;
+			});
