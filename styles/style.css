@@ -30,40 +30,6 @@ body{
 		box-shadow: 0 0 0 20px #ffc30080, 0 0 0 40px #ffc30040, 0 0 0 60px #ffc30020; 
 	}
 
-	.cloud1{
-		position: absolute;
-		top: 80px;
-		left: 600px;
-		z-index: 10000;
-		opacity: 0.5;
-		animation: animateCloud 50s linear infinite;
-	}
-	.cloud3{
-		position: absolute;
-		top: 110px;
-		left: 715px;
-		z-index: 10000;
-		opacity: 0.7;
-		animation: animateCloud 50s linear infinite;
-	}
-	.cloud2{
-		position: absolute;
-		top: 60px;
-		left: 900px;
-		z-index: 10000;
-		opacity: 0.9;
-		animation: animateCloud 50s linear infinite;
-	}
-	
-	@keyframes animateCloud {
-		0%{
-			transform: translateX(-100%) scale(1);
-		}
-		100%{
-			transform: translateX(400%) scale(1.5);
-		}
-	}
-
 /*Starry Night Sky Css*/
 
 	.sceneDayNight{
@@ -190,10 +156,6 @@ h2{
 
 		.sun{
 			left: 200px;
-		}
-
-		.cloud1, .cloud2, .cloud3{
-			display: none;
 		}
 		
 	}
