@@ -15,7 +15,7 @@ function stars(){
 			star.style.height = 1+size+ 'px';
 
 			star.style.animationDuration = 5+duration+'s';
-			 star.style.animationDelay = duration+'s';
+			star.style.animationDelay = duration+'s';
 
 			scene.appendChild(star);
 			i++
@@ -49,6 +49,9 @@ function stars(){
 
 				var backgroundDay = document.getElementById('backgroundDay');
 				var moon = document.getElementById('moon');
+				var sun = document.getElementById('sun');
+				var cloud = document.getElementById('cloud1');
+				
 				// switch(true){
 				// 	case h >= 6 && h <= 11:
 				// 		backgroundDay.classList.add('sceneDaylight');
@@ -64,20 +67,25 @@ function stars(){
 				switch(true){
 					case s >= 0 && s <= 14: //NOG FF AANPASSSEN NAAR UREN
 						backgroundDay.classList.remove('sceneDayNight');
-						moon.classList.remove('moon');
 						backgroundDay.classList.add('sceneDaylight');
+						moon.classList.remove('moon');
+						sun.classList.add('sun');
+						star.
 						break;
 					
 					case s >= 16 && s <= 29: //NOG FF AANPASSSEN NAAR UREN
 						backgroundDay.classList.remove('sceneDaylight');
-						moon.classList.remove('moon');
 						backgroundDay.classList.add('sceneDayMidday');
+						moon.classList.remove('moon');
+						sun.classList.add('sun');	
 						break;
 
 					case s >= 31 && s <= 58: //NOG FF AANPASSSEN NAAR UREN
 						backgroundDay.classList.remove('sceneDayMidday');
-						moon.classList.add('moon');
 						backgroundDay.classList.add('sceneDayNight');
+						sun.classList.remove('sun');
+						moon.classList.add('moon');
+						cloud.classList.remove('cloud');
 						break;
 
 				}

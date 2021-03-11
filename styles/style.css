@@ -17,7 +17,52 @@ body{
 }
 
 /*Sunny Sky Css*/
+	
+	.sun{
+		position: absolute;
+		top: 100px;
+		left: 400px;
+		width: 100px;
+		height: 100px;
+		background-color: #ffc300;
+		border-radius: 50%;
+		z-index: 1000;
+		box-shadow: 0 0 0 20px #ffc30080, 0 0 0 40px #ffc30040, 0 0 0 60px #ffc30020; 
+	}
 
+	.cloud1{
+		position: absolute;
+		top: 80px;
+		left: 600px;
+		z-index: 10000;
+		opacity: 0.5;
+		animation: animateCloud 50s linear infinite;
+	}
+	.cloud3{
+		position: absolute;
+		top: 110px;
+		left: 715px;
+		z-index: 10000;
+		opacity: 0.7;
+		animation: animateCloud 50s linear infinite;
+	}
+	.cloud2{
+		position: absolute;
+		top: 60px;
+		left: 900px;
+		z-index: 10000;
+		opacity: 0.9;
+		animation: animateCloud 50s linear infinite;
+	}
+	
+	@keyframes animateCloud {
+		0%{
+			transform: translateX(-100%) scale(1);
+		}
+		100%{
+			transform: translateX(400%) scale(1.5);
+		}
+	}
 
 /*Starry Night Sky Css*/
 
@@ -25,7 +70,6 @@ body{
 		position: relative;
 		width: 100%;
 		height: 100vh;
-		/*background: linear-gradient(#111425,#3751e0);*/
 		background: linear-gradient(#111425,#3751e0);
 		background-attachment: fixed;
 		overflow: hidden;
@@ -35,7 +79,7 @@ body{
 		position: relative;
 		width: 100%;
 		height: 100vh;
-		background: linear-gradient(blue,green);
+		background: linear-gradient(#ff9500,#ffb700,#ffea00);
 		background-attachment: fixed;
 		overflow: hidden;
 
@@ -45,7 +89,7 @@ body{
 		position: relative;
 		width: 100%;
 		height: 100vh;
-		background: linear-gradient(orange,yellow);
+		background: linear-gradient(#4ea8de,#72efdd,#80ffdb);
 		background-attachment: fixed;
 		overflow: hidden;
 
@@ -144,6 +188,9 @@ h2{
 			left: 200px;
 		}
 
+		.sun{
+			left: 200px;
+		}
 		
 	}
 
@@ -156,16 +203,37 @@ h2{
 		.moon{
 			left: 115px;
 		}
+
+		.sun{
+			left: 115px;
+		}
 	}
 
 	@media only screen and (max-width: 500px) {
 		#digitalClock{
 			font-size: 2.8rem;
+			margin-top: 400px;
+		}
+
+		.moon{
+			left: 95px;
+		}
+
+		.sun{
+			left: 95px;
 		}
 	}
 
 	@media only screen and (max-width: 375px) {
 		#digitalClock{
 			font-size: 2rem;
+		}
+
+		.moon{
+			left: 75px;
+		}
+
+		.sun{
+			left: 75px;
 		}
 	}
