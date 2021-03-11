@@ -70,7 +70,6 @@ function stars(){
 						backgroundDay.classList.add('sceneDaylight');
 						moon.classList.remove('moon');
 						sun.classList.add('sun');
-						star.
 						break;
 					
 					case s >= 16 && s <= 29: //NOG FF AANPASSSEN NAAR UREN
