@@ -1,27 +1,3 @@
-function stars(){
-		let count = 500;
-		let scene = document.querySelector('.scene');
-		let i = 0;
-		while(i < count){
-			let star = document.createElement("i");
-			let x = Math.floor(Math.random() * window.innerWidth);
-			let y = Math.floor(Math.random() * window.innerHeight);
-			let duration = Math.random() * 10;
-			let size = Math.random() * 2;
-
-			star.style.left = x+'px';
-			star.style.top = y+ 'px';
-			star.style.width = 1+size+ 'px';
-			star.style.height = 1+size+ 'px';
-
-			star.style.animationDuration = 5+duration+'s';
-			star.style.animationDelay = duration+'s';
-
-			scene.appendChild(star);
-			i++
-		}
-	}
-	stars();
 
 	const hr = document.querySelector("#hr");
 	const mn = document.querySelector("#mn");
@@ -52,33 +28,45 @@ function stars(){
 		var sun = document.getElementById('sun');
 				
 		// switch(true){
-		// 	case h >= 6 && h <= 11:
-		// 		backgroundDay.classList.add('sceneDaylight');
+		//case s >= 0 && s <= 14: //NOG FF AANPASSSEN NAAR UREN
+		//backgroundDay.classList.remove('sceneDayNight');
+		//backgroundDay.classList.add('sceneDaylight');
+		//moon.classList.remove('moon');
+		//sun.classList.add('sun');
+		//break;
 					
-		// 	case h >= 12 && h <= 17:
-		// 		backgroundDay.classList.add('sceneDayMidday');
+		//case s >= 16 && s <= 29: //NOG FF AANPASSSEN NAAR UREN
+		//backgroundDay.classList.remove('sceneDaylight');
+		//backgroundDay.classList.add('sceneDayMidday');
+		//moon.classList.remove('moon');
+		//sun.classList.add('sun');	
+		//break;
 
-		// 	case h >= 18 && h <= 5:
-		// 		backgroundDay.classList.add('sceneDayNight');
+		//case s >= 31 && s <= 58: //NOG FF AANPASSSEN NAAR UREN
+		//backgroundDay.classList.remove('sceneDayMidday');
+		//backgroundDay.classList.add('sceneDayNight');
+		//sun.classList.remove('sun');
+		//moon.classList.add('moon');
+		//break;
 
-		// }
-
+		//}
+		
 		switch(true){
-			case s >= 0 && s <= 14: //NOG FF AANPASSSEN NAAR UREN
+			case h >= 6 && h <= 12: //UREN
 				backgroundDay.classList.remove('sceneDayNight');
 				backgroundDay.classList.add('sceneDaylight');
 				moon.classList.remove('moon');
 				sun.classList.add('sun');
 				break;
 					
-			case s >= 16 && s <= 29: //NOG FF AANPASSSEN NAAR UREN
+			case h >= 14 && h <= 17: //UREN
 				backgroundDay.classList.remove('sceneDaylight');
 				backgroundDay.classList.add('sceneDayMidday');
 				moon.classList.remove('moon');
 				sun.classList.add('sun');	
 				break;
 
-			case s >= 31 && s <= 58: //NOG FF AANPASSSEN NAAR UREN
+			case h >= 19 && h <= 4: //UREN
 				backgroundDay.classList.remove('sceneDayMidday');
 				backgroundDay.classList.add('sceneDayNight');
 				sun.classList.remove('sun');

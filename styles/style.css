@@ -14,6 +14,7 @@ body{
 	flex-direction: column;
 	min-height: 100vh;
 	width: 100%;
+	background: linear-gradient(#4ea8de,#72efdd,#80ffdb);
 }
 
 /*Sunny Sky Css*/
@@ -36,7 +37,7 @@ body{
 		position: relative;
 		width: 100%;
 		height: 100vh;
-		background: linear-gradient(#111425,#3751e0);
+		background: linear-gradient(#111425,#3751e0,#0466c8);
 		background-attachment: fixed;
 		overflow: hidden;
 	}
@@ -55,7 +56,7 @@ body{
 		position: relative;
 		width: 100%;
 		height: 100vh;
-		background: linear-gradient(#4ea8de,#72efdd,#80ffdb,#f7fff7);
+		background: linear-gradient(#4ea8de,#72efdd,#80ffdb);
 		background-attachment: fixed;
 		overflow: hidden;
 
@@ -80,7 +81,7 @@ body{
 		width: 100%;
 		height: 100%;
 		border-radius: 50%;
-		background: linear-gradient(#111425,#3751e0);
+		background: linear-gradient(#111425,#3751e0,#0466c8);
 		background-attachment: fixed;
 	}
 
@@ -90,32 +91,10 @@ body{
 		left: 0;
 		width: 100%;
 		z-index: 1000;
-		transform: scale(1.2);
+		transform: scale(1.1);
 	}
 
-	.scene i{
-		position: absolute;
-		width: 100%;
-		background-color: #fff;
-		border-radius: 50%;
-		animation: animate linear infinite;
-	}
 
-	@keyframes animate{
-		0%{
-			opacity: 0;
-			transform: translateY(0);
-		}
-
-		10%, 90%{
-			opacity: 1;
-		}
-
-		100%{
-			opacity: 0;
-			transform: translateY(-100px);
-		}
-	}
 
 
 h2{
