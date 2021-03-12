@@ -98,14 +98,10 @@ body{
 
 
 h2{
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	font-size: 1.5rem;
 	display: inline-block;
-	color: #B7094C;
-	text-shadow: 0.5px 1px #fff;
-	height: 70px;
+	color: #fff;
+	text-shadow: 4px 2px #B7094C;
 	font-size: 2rem;
 }
 
@@ -152,7 +148,13 @@ h2{
 		.sun{
 			left: 115px;
 		}
-	}
+
+		h2{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
 
 	@media only screen and (max-width: 500px) {
 		#digitalClock{
@@ -165,7 +167,7 @@ h2{
 		}
 
 		.sun{
-			left: 95px;
+			left: 135px;
 		}
 	}
 
@@ -179,6 +181,6 @@ h2{
 		}
 
 		.sun{
-			left: 75px;
+			left: 135px;
 		}
 	}
