@@ -59,21 +59,21 @@
 				sun.classList.add('sun');
 				break;
 					
-			case h >= 14 && h <= 17: //UREN
+			case h >= 13 && h <= 18: //UREN
 				backgroundDay.classList.remove('sceneDaylight');
 				backgroundDay.classList.add('sceneDayMidday');
 				moon.classList.remove('moon');
 				sun.classList.add('sun');	
 				break;
 
-			case h >= 19 && h <= 4: //UREN
+			case h >= 19: //UREN
 				backgroundDay.classList.remove('sceneDayMidday');
 				backgroundDay.classList.add('sceneDayNight');
 				sun.classList.remove('sun');
 				moon.classList.add('moon');
 				break;
 
-		}
+		};
 
 
 		// verandering van AM to PM 
