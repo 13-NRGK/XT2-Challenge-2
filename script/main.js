@@ -52,6 +52,13 @@
 		//}
 		
 		switch(true){
+			case h >= 1 && h <= 5: //UREN
+				backgroundDay.classList.remove('sceneDayMidday');
+				backgroundDay.classList.add('sceneDayNight');
+				sun.classList.remove('sun');
+				moon.classList.add('moon');
+				break;
+
 			case h >= 6 && h <= 12: //UREN
 				backgroundDay.classList.remove('sceneDayNight');
 				backgroundDay.classList.add('sceneDaylight');
@@ -66,7 +73,7 @@
 				sun.classList.add('sun');	
 				break;
 
-			case h >= 19: //UREN
+			case h >= 19 && h <= 24: //UREN
 				backgroundDay.classList.remove('sceneDayMidday');
 				backgroundDay.classList.add('sceneDayNight');
 				sun.classList.remove('sun');
