@@ -53,7 +53,7 @@
 		
 		switch(true){
 			case h >= 1 && h <= 5: //UREN
-				backgroundDay.classList.remove('sceneDayMidday');
+				backgroundDay.classList.remove('sceneDaylight');
 				backgroundDay.classList.add('sceneDayNight');
 				sun.classList.remove('sun');
 				moon.classList.add('moon');
