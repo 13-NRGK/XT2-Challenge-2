@@ -17,7 +17,7 @@ body{
 	background: linear-gradient(#4ea8de,#72efdd,#80ffdb);
 }
 
-/*Sunny Sky Css*/
+/*Scene design*/
 	
 	.sun{
 		position: absolute;
@@ -30,8 +30,6 @@ body{
 		z-index: 1000;
 		box-shadow: 0 0 0 20px #ffc30080, 0 0 0 40px #ffc30040, 0 0 0 60px #ffc30020; 
 	}
-
-/*Starry Night Sky Css*/
 
 	.sceneDayNight{
 		position: relative;
@@ -95,8 +93,6 @@ body{
 	}
 
 
-
-
 h2{
 	font-size: 1.5rem;
 	display: inline-block;
@@ -106,15 +102,28 @@ h2{
 }
 
 
-/*Digital Clock design*/
+/*Digital Clock design + Date design*/
 
 	#digitalClock{
 		display: flex;
 		justify-content: center;
 		color: #fff;
 		font-size: 4rem;
-		margin-top: 300px;
+		margin-top: 220px;
+		letter-spacing: 0.2rem;
 		text-shadow: 6px 0px #a01a58;
+	}
+
+	#displayDate{
+		letter-spacing: 1rem;
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		color: #fff;
+		margin-top: 330px;
+		left: 35%;
+		font-size: 2.5rem;
+		text-shadow: 4px 0px #a01a58;
 	}
 
 /*Responsive maken*/
@@ -132,13 +141,18 @@ h2{
 		.sun{
 			left: 200px;
 		}
+
+		#displayDate{
+			margin-top: 330px;
+			left: 27%;
+		}
 		
 	}
 
 	@media only screen and (max-width: 670px) {
 		#digitalClock{
 			font-size: 3rem;
-			margin-top: 350px;
+			margin-top: 240px;
 		}
 
 		.moon{
@@ -155,11 +169,17 @@ h2{
 			align-items: center;
 		}
 
+		#displayDate{
+			margin-top: 315px;
+			letter-spacing: 1rem;
+			left: 20%;
+		}
+
 
 	@media only screen and (max-width: 500px) {
 		#digitalClock{
-			font-size: 2.8rem;
-			margin-top: 400px;
+			font-size: 3rem;
+			margin-top: 250px;
 		}
 
 		.moon{
@@ -169,11 +189,17 @@ h2{
 		.sun{
 			left: 135px;
 		}
+
+		#displayDate{
+			font-size: 2.3rem;
+			letter-spacing: 0.5rem;
+			left: 18%;
+		}
 	}
 
 	@media only screen and (max-width: 375px) {
 		#digitalClock{
-			font-size: 2rem;
+			font-size: 2.5rem;
 		}
 
 		.moon{
@@ -182,5 +208,11 @@ h2{
 
 		.sun{
 			left: 135px;
+		}
+
+		#displayDate{
+			font-size: 1.8rem;
+			letter-spacing: 0.3rem;
+			left: 15%;
 		}
 	}

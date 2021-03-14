@@ -4,10 +4,14 @@
 	const sc = document.querySelector("#sc");
 
 	setInterval(()=>{
-		let day = new Date();
-		let hh = day.getHours() * 30;
-		let mm = day.getMinutes() * 6;
-		let ss = day.getSeconds() * 6;
+		let date = new Date();
+		let hh = date.getHours() * 30;
+		let mm = date.getMinutes() * 6;
+		let ss = date.getSeconds() * 6;
+
+		var day = date.getDate();
+		var month = date.getMonth() + 1;
+		var year = date.getFullYear();
 
 		hr.style.transform = `rotateZ(${hh+(mm/24)}deg)`;
 		mn.style.transform = `rotateZ(${mm}deg)`;
@@ -21,7 +25,7 @@
 		let h = new Date().getHours();
 		let m = new Date().getMinutes();
 		let s = new Date().getSeconds();
-		var am = "AM";
+		var am = "PM";
 
 		var backgroundDay = document.getElementById('backgroundDay');
 		var moon = document.getElementById('moon');
@@ -84,17 +88,24 @@
 
 
 		// verandering van AM to PM 
-		if (h > 12) {
-			var am = "PM"
+		if (h < 12) {
+			var am = "AM"
 		}
 
 		// voeg nul toe voor getallen van één cijfer 
 		h = (h < 10) ? "0" + h : h
 		m = (m < 10) ? "0" + m : m
 		s = (s < 10) ? "0" + s : s
+		day = (day < 10) ? "0" + day : day
+		month = (month < 10) ? "0" + month : month
 
 		hour.innerHTML = h+ " : ";
 		minutes.innerHTML = m+ " : ";
 		seconds.innerHTML = s+ " &nbsp ";
 		ampm.innerHTML = am;
+
+		var datum = day + "-" + month + "-" + year;
+		document.getElementById("displayDate").innertext = datum;
+		document.getElementById("displayDate").textContent = datum;
+	
 	});
